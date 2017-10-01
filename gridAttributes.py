@@ -30,7 +30,7 @@ class Grid:
         self.generate()
 
     def __str__(self):
-        toReturn = ("  " + ("_" * ((self.side * 2) - 3))) + "\n"
+        toReturn = (" " + ("_" * ((self.side * 2) - 1))) + "\n"
         for a in self.cells:
             if a.number % self.side == 0:
                 toReturn += "|"
@@ -47,7 +47,7 @@ class Grid:
         return toReturn
 
     def generate(self):
-        currentCell = choice(self.cells)
+        currentCell = self.cells[0]
         visitedCells = 1
         while visitedCells != self.side ** 2:
             choices = []
@@ -69,6 +69,7 @@ class Grid:
                 removeCell = self.stack.pop(-1)
                 nextCell = self.stack[-1]
             currentCell = nextCell
+        print(currentCell.number)
 
     def removeWall(self, primary, secondary):
         if primary.neighbourN == secondary:
