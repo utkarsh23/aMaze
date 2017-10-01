@@ -48,7 +48,9 @@ class Grid:
 
     def generate(self):
         currentCell = self.cells[0]
+        currentCell.occupied = True
         visitedCells = 1
+        self.stack.append(currentCell)
         while visitedCells != self.side ** 2:
             choices = []
             if currentCell.neighbourN and not currentCell.neighbourN.occupied:
