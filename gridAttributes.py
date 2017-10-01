@@ -69,7 +69,6 @@ class Grid:
                 removeCell = self.stack.pop(-1)
                 nextCell = self.stack[-1]
             currentCell = nextCell
-        print(currentCell.number)
 
     def removeWall(self, primary, secondary):
         if primary.neighbourN == secondary:
