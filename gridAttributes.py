@@ -12,6 +12,8 @@ class Cell:
         self.neighbourE = None
         self.occupied = False
         self.number = n
+        self.firstCell = False
+        self.lastCell = False
 
 class Grid:
     def __init__(self, size=10):
@@ -47,7 +49,8 @@ class Grid:
         return toReturn
 
     def generate(self):
-        currentCell = self.cells[0]
+        currentCell = choice(self.cells)
+        currentCell.firstCell = True
         currentCell.occupied = True
         visitedCells = 1
         self.stack.append(currentCell)
@@ -71,6 +74,7 @@ class Grid:
                 removeCell = self.stack.pop(-1)
                 nextCell = self.stack[-1]
             currentCell = nextCell
+        currentCell.lastCell = True
 
     def removeWall(self, primary, secondary):
         if primary.neighbourN == secondary:
