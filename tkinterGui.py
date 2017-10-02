@@ -1,10 +1,17 @@
 from tkinter import *
+from gridAttributes import  Grid
 
-def displayMaze(maze):
+def displayMaze():
+    maze = Grid()
+    print(maze) #To print maze in command line
+
     gui = Tk()
-    canvas = Canvas(gui, width=600, height=600)
-    canvas.pack()
+    gui.title("aMaze Maze Generator")
 
+    gui.grid()
+
+    canvas = Canvas(gui, width=600, height=550)
+    canvas.pack()
     border = canvas.create_rectangle(100, 100, 500, 500)
     horizontalLines = [None for i in range(maze.side ** 2)]
     verticalLines = [None for j in range(maze.side ** 2)]
@@ -37,4 +44,13 @@ def displayMaze(maze):
             yTrackerVertical += 40
         xTrackerVertical += 40
 
+    buttonFrame = Frame(gui, height=25, width=600)
+    randomizeMazeBtn = Button(text="Randomize", command=lambda: generateNewMaze(gui))
+    randomizeMazeBtn.pack()
+    buttonFrame.pack()
+
     gui.mainloop()
+
+def generateNewMaze(gui):
+    gui.destroy()
+    displayMaze()
