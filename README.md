@@ -1,11 +1,15 @@
 # aMaze
-aMaze is a Maze Generator that implements a backtracking algorithm and uses stacks to generate random mazes. This is a group project that was made as a part of DSA (IT200) course.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Group Members:
-* Jahnavi
-* Mathew
-* Utkarsh
-* Vidhi
+aMaze is a Maze Generator that implements a backtracking algorithm and uses stacks to generate random mazes.
+
+## How to run this project
+
+```
+git clone https://github.com/utkarsh23/aMaze.git
+cd aMaze
+python3 main.py --help
+```
 
 ## Algorithm
 1) Select the starting cell for the maze.
