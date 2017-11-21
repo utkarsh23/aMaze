@@ -1,7 +1,7 @@
 # aMaze
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-aMaze is a Maze Generator that implements a backtracking algorithm and uses stacks to generate random mazes.
+aMaze is a Maze Generator that implements a backtracking algorithm and uses stacks to generate random mazes. This project uses python's Tkinter Toolkit to display the maze in a GUI.
 
 ## How to run this project
 
